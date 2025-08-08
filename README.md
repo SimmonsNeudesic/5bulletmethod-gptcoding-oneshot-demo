@@ -1,8 +1,25 @@
 # 5BulletMethod MVP
 
-A weekly productivity journaling app where users log 5 bullet-point accomplishments each week.
+This is an educational repo about a weekly productivity journaling app where users log 5 bullet-point accomplishments each week.
+# Branches
 
-## Features
+Each branch in this repository is named after an AI model that was used to "one-shot" the creation of the app. This means that the app was generated in a single pass using the capabilities of the respective model.
+
+Current branches:
+
+- `sonnet-4`
+- `gpt-5`
+- `gpt-4.1`
+- `gemini-2.5-pro`
+- `gpt-4o`
+
+Each branch contains the code and artifacts produced by its corresponding model, providing a comparison of how different models approach the same app generation task.
+
+## About the App it Makes
+
+This app was my idea for a fun way to track productivity. It came about after Elon Musk stated the Department of Government Efficiency (DOGE) and asked everyone in the federal government to "report what they did last week. This can be simple, just use a bullet list with 5 things in it that you got done"
+
+Here are some features the app should have:
 
 - **Weekly Entries**: Create one entry per week with up to 5 bullet items
 - **Bullet Items**: Each item includes emoji, description, and optional category
@@ -10,135 +27,16 @@ A weekly productivity journaling app where users log 5 bullet-point accomplishme
 - **Streak Tracker**: Shows consecutive weeks of entries
 - **AI Insights**: Motivational feedback after submission
 
-## Tech Stack
+### Tech Stack
 
 - **Frontend**: React + Vite + TypeScript + Tailwind CSS
 - **Backend**: Azure Functions (Node.js + TypeScript)
 - **Database**: SQLite (better-sqlite3)
 - **Auth**: Simulated (userId = "test-user")
 
-## Quick Start
+## The prompt to one-shot the app build
 
-### Prerequisites
+The same prompt is used to build the app across each model.
 
-- Node.js (v18 or higher)
-- npm
-- Azure Functions Core Tools (for running the API locally)
+The 
 
-### Installation
-
-1. **Clone and navigate to the project**
-```bash
-cd 5bulletmethod
-```
-
-2. **Set up the database**
-```bash
-cd db
-npm install better-sqlite3
-node init.js
-cd ..
-```
-
-3. **Set up the API**
-```bash
-cd api
-npm install
-npm run build
-cd ..
-```
-
-4. **Set up the frontend**
-```bash
-cd web
-npm install
-cd ..
-```
-
-### Running the Application
-
-1. **Start the API server** (in one terminal):
-```bash
-cd api
-npm start
-```
-This starts the Azure Functions runtime on http://localhost:7071
-
-2. **Start the frontend** (in another terminal):
-```bash
-cd web
-npm run dev
-```
-This starts the Vite dev server on http://localhost:3000
-
-3. **Open your browser** to http://localhost:3000
-
-## Project Structure
-
-```
-/
-├── api/          # Azure Functions backend
-│   ├── src/
-│   │   ├── database.ts      # Database service
-│   │   ├── entries/         # Entries CRUD API
-│   │   ├── streak/          # Streak tracking API
-│   │   └── insight/         # AI insights API
-│   ├── host.json
-│   ├── package.json
-│   └── tsconfig.json
-├── web/          # React frontend
-│   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── pages/           # Page components
-│   │   ├── services/        # API client
-│   │   ├── types/           # TypeScript types
-│   │   └── utils/           # Utility functions
-│   ├── index.html
-│   ├── package.json
-│   ├── tailwind.config.js
-│   └── vite.config.ts
-└── db/           # Database setup
-    ├── schema.sql           # Database schema
-    ├── init.js             # Database initialization
-    └── bullet_journal.db   # SQLite database file
-```
-
-## API Endpoints
-
-- `GET /api/entries` - Get all entries for user
-- `POST /api/entries` - Create new entry
-- `GET /api/entries/:id` - Get specific entry
-- `PUT /api/entries/:id` - Update entry
-- `DELETE /api/entries/:id` - Delete entry
-- `GET /api/streak` - Get current streak
-- `GET /api/entries/:id/insight` - Get AI insight for entry
-
-## Sample Data
-
-The database is initialized with sample data for testing:
-- Previous week entry with 4 bullet items
-- Current week entry with 3 bullet items
-- AI insights for both entries
-
-## Development Notes
-
-- The app runs entirely locally without requiring Azure deployment
-- Authentication is simulated with a hardcoded user ID
-- The API includes CORS headers for local development
-- The frontend proxies API requests to the Functions runtime
-
-## Next Steps
-
-To convert this MVP to production:
-
-1. **Authentication**: Replace simulated auth with real authentication (Azure AD, Auth0, etc.)
-2. **Database**: Migrate from SQLite to Azure SQL Database or CosmosDB
-3. **AI**: Integrate real AI service (OpenAI, Azure OpenAI) for insights
-4. **Deployment**: Deploy API to Azure Functions and frontend to Azure Static Web Apps
-5. **Features**: Add user profiles, data export, analytics, etc.
-
-## Troubleshooting
-
-**API not starting**: Make sure Azure Functions Core Tools is installed
-**Frontend not connecting to API**: Check that API is running on port 7071
-**Database errors**: Run `node db/init.js` to reinitialize the database
