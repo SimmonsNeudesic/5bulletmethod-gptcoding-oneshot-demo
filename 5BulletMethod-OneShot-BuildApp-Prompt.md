@@ -32,7 +32,8 @@ Example weekly entry:
 
 ## 📁 Folder Layout
 
-```/api      – Azure Functions  
+```
+/api      – Azure Functions  
 /web      – React + Vite + Tailwind frontend  
 /db       – SQLite schema and database file  
 ```
