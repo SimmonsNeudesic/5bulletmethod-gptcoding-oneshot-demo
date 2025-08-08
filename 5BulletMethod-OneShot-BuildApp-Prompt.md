@@ -17,7 +17,8 @@ Auth: Simulated login (userId = "test-user") — real auth will be added later.
 
 Example weekly entry:
 
-```⚖️ Lost 5 pounds [health]  
+```
+⚖️ Lost 5 pounds [health]  
 🚗 Got oil change [car]  
 💅 Nails done [health]  
 ☎️ Called mom [relationships]  
