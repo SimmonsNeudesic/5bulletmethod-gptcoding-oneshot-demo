@@ -36,7 +36,5 @@ Here are some features the app should have:
 
 ## The prompt to one-shot the app build
 
-The same prompt is used to build the app across each model.
-
-The 
+The prompt is saved in the main branch as [`5BulletMethod-OneShot-BuildApp-Prompt.md`](5BulletMethod-OneShot-BuildApp-Prompt.md).
 
