@@ -36,5 +36,5 @@ Here are some features the app should have:
 
 ## The prompt to one-shot the app build
 
-The prompt is saved in the main branch as [`5BulletMethod-OneShot-BuildApp-Prompt.md`](5BulletMethod-OneShot-BuildApp-Prompt.md).
+The prompt is saved in the main branch as [`.github/prompts/5BulletMethod-OneShot-BuildApp.prompt.md`](.github/prompts/5BulletMethod-OneShot-BuildApp.prompt.md).
 
